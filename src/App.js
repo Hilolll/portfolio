@@ -17,14 +17,16 @@ function App() {
             element={
               <>
                 <Intro />
-                <Projects />
               </>
             }
           />
+          
+          <Route path='/projects' element={<Projects />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path='/contacts' element={<Contacts/>} />
+          
         </Routes>
-        
+
         <Footer />
       </div>
     </Router>

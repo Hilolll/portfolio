@@ -11,6 +11,7 @@ export default function Intro() {
         <div className='intro__img'>
             <img src='./img/intro-logo.png'></img>
         </div>
+
     </div>
   )
 }

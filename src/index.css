@@ -10,13 +10,17 @@
   padding: 0;
 }
 
-html {
+
+html, body {
+  overflow-x: hidden;
   scroll-behavior: smooth;
+  background-image: linear-gradient(to right bottom, #78a3eb, #a4a9ef, #c7b0ef, #e4b8ed, #fbc2eb);
+  font-family: "Roboto Condensed", serif;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #fff;
   transition: .75s ease;
 }
 
@@ -27,31 +31,50 @@ a:hover {
 ul {
   list-style: none;
 }
-body {
-  background-color: #fff;
-  font-family: "Roboto Condensed", serif;
-}
 
 /* Header */
 header {
-  width: 90%;
-  height: 80px;
-  margin: 0 auto;
-  margin-top: 10px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
+  position: relative;
 }
 
 .logo {
-  font-size: 40px;
-  font-weight: 600;
+  font-size: 42px;
+  color: #fff;
   font-family: "Acme", serif;
+  padding-left: 40px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 30px;
 }
 
 .nav__links {
-  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Бургер-кнопка */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  border-radius: 3px;
+  transition: all 0.3s ease;
 }
 
 /* Intro */
@@ -59,17 +82,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  width: 90%;
+  max-width: 90%;
   height: 550px;
   padding: 20px;
   margin: 30px auto;
-
-  background-color: #92b775;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
-  -webkit-box-shadow: 0px 5px 80px 10px rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0px 5px 80px 10px rgba(0, 0, 0, 0.19);
-  box-shadow: 0px 5px 80px 10px rgba(0, 0, 0, 0.19);
+  color: #fff;
 
 }
 
@@ -78,11 +99,8 @@ header {
   flex-direction: column;
   justify-content: space-between;
   margin-left: 60px;
-
   height: 400px;
   font-family: "Acme", serif;
-  color: #fff;
-
 }
 
 .intro__title h1 {
@@ -103,21 +121,17 @@ header {
   font-weight: 600;
 }
 
-.intro__img {
+
+.intro__img img {
   width: 400px;
   height: 400px;
   margin-right: 40px;
 }
 
-.intro__img img {
-  width: 400px;
-  height: 400px;
-}
-
 .intro__title span {
   color: white;
   animation: colorCycle 6s linear infinite;
-  transition: color 0.5s ease; /* Плавный переход цвета */
+  transition: color 0.5s ease;
 }
 
 @keyframes colorCycle {
@@ -127,11 +141,9 @@ header {
   100% { color: white; }
 }
 
-/* Projects */
 
+/* Projects */
 .projects {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   width: 90%; 
   height: 700px;
@@ -142,7 +154,6 @@ header {
 .projects__title  h2{
   display: flex;
   justify-content: center;
-  margin-top: 200px;
   font-size: 30px;
 }
 
@@ -155,20 +166,16 @@ header {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 80px;
   padding: 80px;
-
 }
 
 .projects__item {
   width: 300px;
   height: 200px;
   border-radius: 30px;
-  background: #ebebeb;
-  box-shadow: 15px 15px 30px #bebebe,
-              -15px -15px 30px #ffffff;
+  background: #fff;
   padding: 20px;
   position: relative; 
-  overflow: hidden; 
-  z-index: 1;
+  overflow: hidden;
 }
 
 .projects__item::before {
@@ -254,9 +261,8 @@ header {
   height: 90%;
   margin: 0 auto;
   border-radius: 5px;
-  background: #fffdfd;
-  box-shadow: 20px 20px 60px #dbd9d9,
-              -20px -20px 60px #ffffff;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(30px);
 }
 
 
@@ -316,7 +322,6 @@ header {
   
 }
 
-
 .contact-form textarea {
   resize: none;
   height: 100px;
@@ -336,7 +341,6 @@ header {
   align-items: center;
   position: relative;
 }
-
 
 .submit-button:hover {
   background: #45a049;
@@ -417,4 +421,174 @@ header {
 }
 
 
+@media (max-width: 480px) {
+  /*Бургер*/
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .burger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  
+    /* Header */
+  .header__nav {
+    z-index: 3;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    color: #000;
+    background: rgba(0, 0, 0, 0.63);
+    backdrop-filter: blur(30px);
+    flex-direction: column;
+    width: 90%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+    visibility: hidden;
+    pointer-events: none; 
+  }
+  
+  .logo {
+    padding-left: 5px;
+  }
 
+  .header__nav.active {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .burger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    
+  }
+  
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+
+  }
+  
+  .burger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    
+  }
+
+  /* Intro */
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 85%;
+  }
+  
+  .intro__title {
+    margin-left: 0;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .intro__title h1 {
+    font-size: 32px;
+    padding: 10px;
+  }
+  
+  .intro__title p {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 10px;
+  }
+  
+  .intro__title span {
+    font-size: 20px;
+  }
+  
+  .intro__img img {
+    width: 80%;
+    height: auto;
+    max-width: 300px;
+    margin-right: 0;
+  }
+
+  /* Projects */
+  .projects__item {
+    padding: 0;
+  }
+  
+  .projects {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .projects__title h2 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  .projects__items {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 40px;
+    padding: 20px;
+  }
+  
+  .projects__item {
+    width: 88%;
+    height: 90px;
+    padding: 15px;
+  }
+  
+  .projects__item h3 {
+    font-size: 18px;
+  }
+  
+  .projects__item p {
+    font-size: 14px;
+  }
+  
+  .projects__item a {
+    font-size: 14px;
+  }
+
+  /* About-Me*/
+  .about-me {
+    max-width: 95%;
+  }
+  
+  .about-me__container {
+    margin: 20px 0;
+    flex-direction: column;
+  }
+  
+  .about-me__card {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    backdrop-filter: blur(15px); /* Уменьшаем размытие для мобил */
+    padding: 20px 0;
+  }
+  
+  .about-me__card__content p {
+    width: 90%;
+    padding: 20px;
+    line-height: 23px;
+    font-size: 14px; /* Опционально: уменьшаем размер шрифта */
+  }
+
+  .about-me__card__content ul {
+    padding-top: 15px;
+    line-height: 25px;
+  }
+}

@@ -13,9 +13,14 @@ const projects = [
 
 const Projects = () => {
     return (
+        
+
+
         <div className='projects__title'>
-            <h2 id='projects'>Pet-Projects</h2>
+            
+            
             <section className='projects'>
+            <h2 id='projects'>Pet-Projects</h2>
                 <div className='projects__items'>
                     {projects.map(project => (
                         <div className='projects__item' key={project.id}>
