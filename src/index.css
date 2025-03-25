@@ -576,7 +576,7 @@ header {
     width: 100%;
     height: auto;
     flex-direction: column;
-    backdrop-filter: blur(15px); /* Уменьшаем размытие для мобил */
+    backdrop-filter: blur(15px);
     padding: 20px 0;
   }
   
@@ -584,7 +584,7 @@ header {
     width: 90%;
     padding: 20px;
     line-height: 23px;
-    font-size: 14px; /* Опционально: уменьшаем размер шрифта */
+    font-size: 14px;
   }
 
   .about-me__card__content ul {
