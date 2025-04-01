@@ -73,7 +73,8 @@ export default function ContactForm() {
     </form>
     {submitted && <p className="success-message">Сообщение отправлено! <TbMessageCircleCheck /> </p>}
     
-    <img src="/img/form-img.jpg" alt="Example" />
+    
+    <img src={"/img/form-img.jpg"}></img>
     </motion.div>
     
 );

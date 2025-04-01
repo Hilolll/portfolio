@@ -8,7 +8,7 @@ import Contacts from './components/Contacts';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <div className="App">
         <Header />
         
